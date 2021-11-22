@@ -1,0 +1,25 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}pyLFDA workspaces{% endblock %}
+
+{% block content %}    
+    <section>
+        <div class="container workspace-cards">
+            <div class="row">
+                {% for work_space in all_workspace %}
+                    <div class="col-sm-6">
+                        <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ work_space.experiment_name }}</h5>
+                            <p class="card-text">{{ work_space.pdb_filename }}</p>
+                            <a href="{% url 'workspace' work_space.id %}" class="btn btn-primary">Open workspace</a>
+                        </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,34 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load crispy_forms_tags %}
+
+{% block title %}pyLFDA workspaces{% endblock %}
+
+{% block content %}    
+    <section>
+        <div class="container workspace-experiment-cards">
+            <div class="row">
+                <div class="col-12">
+                    <h2>{{ workspace.experiment_name }}</h2>
+                    <h5>Workspace folder : {{ workspace.workspace_folder }}</h5>
+                    <p>PDB filename : {{ workspace.pdb_filename }}</p>
+                    <p>GRO filename : {{ workspace.gro_filename }}</p>
+                    <p>GRO filename : {{ workspace.gro_filename }}</p>
+                    <p>TRR filename : {{ workspace.trr_filename }}</p>
+                    <p>TPR filename : {{ workspace.tpr_filename }}</p>
+                    <p>NDX filename : {{ workspace.ndx_filename }}</p>
+                    <br>
+
+                    <div class="col-sm-12">
+                        <div class="card">
+                            <div class="card-body">
+                                <h5 class="card-title">Initialize experiment</h5>
+                                <a href="{% url 'workspace' workspace.id %}" class="btn btn-primary">Open workspace</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,24 @@
+python -m venv venv
+./venv/Scripts/activate
+pip install django
+django-admin startproject pyLFDA_GUI
+cd pyLFDA_GUI
+python manage.py createsuperuser
+Username : lfda, Email : pyLFDA_GUI@gmail.com, Password : lfda123
+python manage.py startapp pyLFDA_GUI_app
+Add config names from app.py of apps in INSTALLED_APPS in setting.py
+python manage.py migrate
+python manage.py makemigrations
+run with python manage.py runserver
+Go to app (core, buyer, seller)
+Create urls.py
+Create folder as template/core {app name}
+Create folder as static
+configure main urls.py with include like path('', include('buyer.urls')),
+put html in template/core folder with static file enclosed in {% static 'file_name' %} name change
+put asset javascipts in static folder
+change main setting STATIC_URL with '/static/'
+add + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT) in main urls.py to load static files
+add {% load static %} in main html to load assets files
+{% extends "layout.html" %} in child html page to extend the layout
+use block to edit htmls

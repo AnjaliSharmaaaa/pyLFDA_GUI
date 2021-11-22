@@ -1,0 +1,29 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}pyLFDA{% endblock %}
+
+{% block navbar %}
+    <a class="nav-link active" aria-current="page" href="#">Home</a>
+    <a class="nav-link" href="#">Features</a>
+    <a class="nav-link" href="#">Contact</a>
+{% endblock %}
+
+{% block content %}    
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Cover your page.</h1>
+                    <p class="lead">Cover is a one-page template for building simple and beautiful home pages. Download, edit the text, and add your own fullscreen background photo to make it your own.</p>
+                    <p class="lead">
+                    <a href="{% url 'new_workspace' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">New workspace</a>
+                    <br>
+                    <br>
+                    <a href="{% url 'all_workspace' %}" class="btn btn-lg btn-secondary fw-bold border-white bg-white">Open workspace</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock %}
